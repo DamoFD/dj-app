@@ -90,7 +90,7 @@ export const useLoginService = () => {
                 } else {
                     newErrors.general = error.response?.data.message;
                 }
-                // catach all for any other errors
+                // catch all for any other errors
             } else {
                 newErrors.general = 'An unexpected error occurred. Please try again later.';
                 return errors;

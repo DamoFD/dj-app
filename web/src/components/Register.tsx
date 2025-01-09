@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRegisterService } from "@/hooks/registerService";
+import EmailRegister from "@/components/EmailRegister";
 
 const Register: React.FC = () => {
     const { register, errors, loading } = useRegisterService();
@@ -11,9 +12,11 @@ const Register: React.FC = () => {
         confirm_password: '',
     });
 
+    const [currentPage, setCurrentPage] = useState(1);
+
     return (
-        <div>
-            <h1>Register</h1>
+        <div className="bg-white w-full h-screen">
+            {currentPage === 1 && <EmailRegister payload={payload} setPayload={setPayload} setCurrentPage={setCurrentPage} />}
         </div>
     );
 }

@@ -37,7 +37,7 @@ interface Errors {
 * @returns {
 *   loading: boolean,
 *   errors: Errors,
-*   login: (payload: Payload) => Promise<void>
+*   register: (payload: Payload) => Promise<void>
 *   checkEmail: (email: string) => Promise<void>
 *   checkPassword: (password: string) => Promise<void>
 *   checkArtistName: (artist_name: string) => Promise<void>
