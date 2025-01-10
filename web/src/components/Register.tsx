@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useRegisterService } from "@/hooks/registerService";
 import EmailRegister from "@/components/EmailRegister";
+import PasswordRegister from "@/components/PasswordRegister";
+import NameRegister from "@/components/NameRegister";
+import RegisterConfirmation from "@/components/RegisterConfirmation";
 
 const Register: React.FC = () => {
     const { register, errors, loading } = useRegisterService();
@@ -17,6 +20,9 @@ const Register: React.FC = () => {
     return (
         <div className="bg-white w-full h-screen">
             {currentPage === 1 && <EmailRegister payload={payload} setPayload={setPayload} setCurrentPage={setCurrentPage} />}
+            {currentPage === 2 && <PasswordRegister payload={payload} setPayload={setPayload} setCurrentPage={setCurrentPage} />}
+            {currentPage === 3 && <NameRegister payload={payload} setPayload={setPayload} setCurrentPage={setCurrentPage} />}
+            {currentPage === 4 && <RegisterConfirmation payload={payload} setCurrentPage={setCurrentPage} />}
         </div>
     );
 }
